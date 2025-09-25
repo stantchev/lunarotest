@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #111827; /* gray-900 */
+    --color-card: #F8FAFC; /* slate-50 */
+    --color-card-foreground: #111827; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #111827; /* gray-900 */
+    --color-muted: #F8FAFC; /* slate-50 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Border and Input */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #1E40AF; /* blue-800 */
+    
+    /* Brand Colors */
+    --color-primary: #1E40AF; /* blue-800 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #374151; /* gray-700 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Status Colors */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #DC2626; /* red-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Text Colors */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #6B7280; /* gray-500 */
+    
+    /* Surface Colors */
+    --color-surface: #F8FAFC; /* slate-50 */
+    --color-surface-foreground: #111827; /* gray-900 */
+    
+    /* Brand Specific Colors */
+    --color-cyber-green: #00FF88; /* custom-green */
+    --color-cyber-green-foreground: #000000; /* black */
+    --color-ai-blue: #4488FF; /* custom-blue */
+    --color-ai-blue-foreground: #FFFFFF; /* white */
+    --color-conversion-orange: #FF6B35; /* custom-orange */
+    --color-conversion-orange-foreground: #FFFFFF; /* white */
+    --color-dark-bg: #0A0A0A; /* custom-dark */
+    --color-dark-bg-foreground: #F5F5F5; /* gray-100 */
+    --color-text-off-white: #F5F5F5; /* gray-100 */
+    --color-text-medium-gray: #A0A0A0; /* gray-400 */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-headline {
+    font-family: var(--font-inter);
+  }
+  
+  .font-body {
+    font-family: var(--font-source-serif-pro);
+  }
+  
+  .font-cta {
+    font-family: var(--font-inter);
+  }
+  
+  .font-mono {
+    font-family: var(--font-jetbrains-mono);
+  }
+  
+  /* Cyber Grid Background */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0,255,136,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,136,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Glassmorphism Effect */
+  .glass-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  /* Threat Level Pulse Animation */
+  @keyframes pulse-threat {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .pulse-threat {
+    animation: pulse-threat 2s infinite;
+  }
+  
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 200ms ease-out;
+  }
+  
+  .transition-page {
+    transition: all 400ms ease-out;
+  }
+  
+  /* Hover Lift Effect */
+  .hover-lift {
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+  
+  /* Ambient Glow */
+  .glow-cyber {
+    box-shadow: 0 0 20px rgba(0,255,136,0.3);
+  }
+  
+  .glow-ai {
+    box-shadow: 0 0 20px rgba(68,136,255,0.3);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(220,38,38,0.3);
+  }
+}
